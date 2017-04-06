@@ -63,10 +63,10 @@ class EncoderDecoder:
         # self.tgt_id_to_word = tgt_id_to_word
 
     def save(self):
-        self.model.save("../obj/" + config["model_name"] + "_params.bin")
+        self.model.save("obj/" + config["model_name"] + "_params.bin")
 
     def load(self):
-        self.model.load("../obj/" + config["model_name"] + "_params.bin")
+        self.model.load("obj/" + config["model_name"] + "_params.bin")
 
     def transpose_input(self, seq):
         max_len = max([len(sent) for sent in seq])
@@ -396,12 +396,12 @@ if __name__ == '__main__':
     parser.add_argument("--att_dim", type=int, default=256)
     parser.add_argument("--beam_size", type=int, default=5)
     parser.add_argument("--batch_size", type=int, default=32)
-    parser.add_argument('--train_tgt', type=str, default="../en-de/train.en-de.low.filt.en")
-    parser.add_argument('--train_src', type=str, default="../en-de/train.en-de.low.filt.de")
-    parser.add_argument('--dev_tgt', type=str, default="../en-de/valid.en-de.low.en")
-    parser.add_argument('--dev_src', type=str, default="../en-de/valid.en-de.low.de")
-    parser.add_argument('--test_tgt', type=str, default="../en-de/test.en-de.low.en")
-    parser.add_argument('--test_src', type=str, default="../en-de/test.en-de.low.de")
+    parser.add_argument('--train_tgt', type=str, default="en-de/train.en-de.low.filt.en")
+    parser.add_argument('--train_src', type=str, default="en-de/train.en-de.low.filt.de")
+    parser.add_argument('--dev_tgt', type=str, default="en-de/valid.en-de.low.en")
+    parser.add_argument('--dev_src', type=str, default="en-de/valid.en-de.low.de")
+    parser.add_argument('--test_tgt', type=str, default="en-de/test.en-de.low.en")
+    parser.add_argument('--test_src', type=str, default="en-de/test.en-de.low.de")
 #     parser.add_argument('--src_vocab_size', type=int, default=3000)
 #     parser.add_argument('--tgt_vocab_size', type=int, default=2000)
     parser.add_argument('--src_vocab_size', type=int, default=30000)
